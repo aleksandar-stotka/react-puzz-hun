@@ -37,12 +37,41 @@
   height: 100px;
   cursor: grab;
   background-size: 400px 400px;
+  background-position: center;
+  transition: all 0.3s ease;
 }
 
 .pieces-container {
   display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
+  flex-wrap: nowrap;  /* No wrapping of pieces */
+  gap: 10px;
   margin-top: 20px;
-  max-width: 420px;
+  justify-content: center; /* Center the pieces horizontally */
+  max-width: 400px;
+  overflow-x: auto; /* Horizontal scrolling if needed */
+  padding: 10px;
+}
+
+.puzzle-piece {
+  background-image: url('https://i.ytimg.com/vi/L6u1-dUs424/hq720.jpg');
+  background-position: 0 0;
+  background-size: 400px 400px;
+  cursor: grab;
+  width: 100px;
+  height: 100px;
+}
+
+.puzzle-piece.dropped {
+  cursor: default;
+  border: none;
+}
+
+.puzzle-slot {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.puzzle-piece {
+  cursor: grab;
 }
